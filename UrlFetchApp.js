@@ -14,7 +14,7 @@ function fetch() {
 
 function append() {
   var array = fetch();
-  var targetRange = SpreadsheetApp.getActiveSheet().getRange(4,1,array.length,);
+  var targetRange = SpreadsheetApp.getActiveSheet().getRange(4,1,array.length,array[0].length);
   console.log(array.length)
   console.log(targetRange.getValues().length)
   targetRange.setValues(array);

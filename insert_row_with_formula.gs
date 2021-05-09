@@ -51,15 +51,21 @@ function insert_row() {
 	};
 
 function rowstoColumnsformula(){
-	var spreadsheet = SpreadsheetApp.getActive();
-	var row = spreadsheet.getActiveCell().getRow()-1;
+	var spreadsheet = SpreadsheetApp
+				.getActive();
+	var row = spreadsheet
+			.getActiveCell()
+			.getRow()-1;
 	var structure =
-	'AF'+row+":"+'AK'+row+";"+
-	'AL'+row+":"+'AQ'+row+";"+
-	'AR'+row+":"+'AW'+row+";"+
-	'AX'+row+":"+'BC'+row+";"+
-	'BD'+row+":"+'BI'+row+";"+
-	'BJ'+row+":"+'BO'+row+';'+
-	'BP'+row+":"+'BU'+row;
-	return spreadsheet.getActiveCell().setFormula('='+'{'+structure+'}');
-	};
+		'AF'+row+":"+'AK'+row+";"+
+		'AL'+row+":"+'AQ'+row+";"+
+		'AR'+row+":"+'AW'+row+";"+
+		'AX'+row+":"+'BC'+row+";"+
+		'BD'+row+":"+'BI'+row+";"+
+		'BJ'+row+":"+'BO'+row+';'+
+		'BP'+row+":"+'BU'+row;
+	return spreadsheet
+		.getActiveCell()
+		.setFormula(
+		'='+'{'+structure+'}'
+	);};

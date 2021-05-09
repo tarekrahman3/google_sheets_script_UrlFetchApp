@@ -1,29 +1,29 @@
 function insert_row() {
   var spreadsheet = SpreadsheetApp
-  						.getActive();
+			.getActive();
   
   var sheet = spreadsheet
-					.getActiveSheet();
+		.getActiveSheet();
   
   var number = sheet
-  				.getActiveCell().getValue();
+		.getActiveCell()
+  		.getValue();
   
   sheet
   	.getRange(
   		spreadsheet
-			.getCurrentCell()
-			.getRow(), 1, 1, sheet
-			.getMaxColumns()
-			)
-		  	.activate();
+		.getCurrentCell()
+		.getRow(), 1, 1, sheet
+		.getMaxColumns()
+	).activate();
   
   spreadsheet
   	.getActiveSheet()
-    .insertRowsAfter(
-    	spreadsheet
-	    .getActiveRange()
-	    .getLastRow(), number-1
-    );
+    	.insertRowsAfter(
+    		spreadsheet
+		    .getActiveRange()
+		    .getLastRow(), number-1
+	 );
   
   spreadsheet
   	.getActiveRange()
@@ -32,10 +32,9 @@ function insert_row() {
 	    .getActiveRange()
 	    .getNumRows(), 0, number-1,
     		spreadsheet
-				.getActiveRange()
-				.getNumColumns()
-		)
-		.activate();
+		.getActiveRange()
+		.getNumColumns()
+	).activate();
   
   spreadsheet
     .getActiveRangeList()
@@ -48,7 +47,7 @@ function insert_row() {
     .getCurrentCell()
     .offset(0, 25)
     .activate();
-	};
+};
 
 function rowstoColumnsformula(){
 	var spreadsheet = SpreadsheetApp

@@ -1,13 +1,10 @@
 /** @OnlyCurrentDoc */
-
 function prompt() {
-  var i = SpreadsheetApp.getUi().prompt("Please enter rows amount").getResponseText();
+  var i = SpreadsheetApp.getUi().prompt("Enter rows amount to insert below").getResponseText();
   return i
-}
-function InsertTwoBelow() {
-  var spreadsheet = SpreadsheetApp.getActive();
-  spreadsheet.getActiveSheet().getRange(
-              spreadsheet.getCurrentCell().getRow(),spreadsheet.getActiveSheet().getMaxColumns()).activate();
-  spreadsheet.setCurrentCell(spreadsheet.getCurrentCell());
-  spreadsheet.getActiveSheet().insertRowsAfter(spreadsheet.getActiveRange().getLastRow(), prompt());
 };
+function InsertTwoBelow() {
+  var Spread_Sheet = SpreadsheetApp.getActive();
+  Spread_Sheet.getActiveSheet().insertRowsAfter(Spread_Sheet.getCurrentCell().getRow(), prompt()); 
+};
+//Replace promt() with any number for fixed value
